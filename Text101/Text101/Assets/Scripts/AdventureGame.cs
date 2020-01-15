@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class AdventureGame : MonoBehaviour
 {
     // [Seria..] in front of variable means we have this available in the inspector.
-    [SerializeField] Text gameTitle;
-
     [SerializeField] Text textComponent;
     [SerializeField] State startingState;
 
@@ -17,8 +15,6 @@ public class AdventureGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameTitle.text = "Adventure game";
-
         this.state = this.startingState;       
         textComponent.text = this.state.GetStateStory();
     }
@@ -32,18 +28,28 @@ public class AdventureGame : MonoBehaviour
     private void ManageState()
     {
         State[] nextStates = state.GetNextStates();
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+
+        for (int index = 0; index < nextStates.Length; index++)
         {
-            this.state = nextStates[0];
+            if (Input.GetKeyDown(KeyCode.Alpha1 + index))
+            {
+                this.state = nextStates[index];
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            this.state = nextStates[1];
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            this.state = nextStates[2];
-        }
+
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    this.state = nextStates[0];
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    this.state = nextStates[1];
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    this.state = nextStates[2];
+        //}
+
         this.textComponent.text = this.state.GetStateStory();
     }
 }
