@@ -393,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204828127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.07, y: 6.65, z: 0}
+  m_LocalPosition: {x: 2.96, y: 6.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1243952084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 1280948394}
   - component: {fileID: 1280948393}
   - component: {fileID: 1280948392}
+  - component: {fileID: 1280948396}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -667,12 +668,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280948391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.43, y: 9.99, z: 0}
+  m_LocalPosition: {x: 4.996, y: 0.698, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280948396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280948391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce31bb843bb564aa67ecfed29e29ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 1566638831}
 --- !u!1 &1425174320
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +844,7 @@ GameObject:
   - component: {fileID: 1566638829}
   - component: {fileID: 1566638828}
   - component: {fileID: 1566638830}
+  - component: {fileID: 1566638831}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -894,7 +909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566638827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.87, y: 0.88, z: 0}
+  m_LocalPosition: {x: 5, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -932,6 +947,21 @@ PolygonCollider2D:
       - {x: 1, y: -0.25}
       - {x: 1.0003633, y: 0.042781353}
       - {x: 0.83976364, y: 0.11037165}
+--- !u!114 &1566638831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566638827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dfe06c37a4acd245aaf81878b134157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidthInUnits: 16
+  xMinPosition: 1
+  xMaxPosition: 15
 --- !u!1 &1801872582
 GameObject:
   m_ObjectHideFlags: 0
