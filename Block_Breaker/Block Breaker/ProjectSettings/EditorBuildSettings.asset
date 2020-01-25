@@ -7,6 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Start Menu.unity
+    guid: 7615a349eef4d7e4baff22211bf3cf19
+  - enabled: 1
+    path: Assets/Scenes/Difficulty Screen.unity
     guid: 243e9d52fdaebf24aa9c189ec8080f80
   - enabled: 1
     path: Assets/Scenes/Level 1.unity

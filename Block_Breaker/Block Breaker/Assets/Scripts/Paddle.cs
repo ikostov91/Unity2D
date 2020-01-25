@@ -10,10 +10,21 @@ public class Paddle : MonoBehaviour
     [SerializeField] float xMinPosition = 1f;
     [SerializeField] float xMaxPosition = 15f;
 
+
+    // Cached references
+    GameSession gameSession;
+    Ball ball;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.InitializeObjects();
+    }
+
+    private void InitializeObjects()
+    {
+        this.gameSession = FindObjectOfType<GameSession>();
+        this.ball = FindObjectOfType<Ball>();
     }
 
     // Update is called once per frame
@@ -24,9 +35,20 @@ public class Paddle : MonoBehaviour
         // This gives position as percentage (from 0 to 1)
         // 6 is camera size (half of height)
         // 16 is width (12 height and 4:3 ration => 16)
-        float mousePosInUnits = Input.mousePosition.x / Screen.width * this.screenWidthInUnits;
         Vector2 paddlePosition = new Vector2(transform.position.x, transform.position.y);
-        paddlePosition.x = Mathf.Clamp(mousePosInUnits, this.xMinPosition, this.xMaxPosition);
+        paddlePosition.x = Mathf.Clamp(this.GetXPos(), this.xMinPosition, this.xMaxPosition);
         transform.position = paddlePosition;
+    }
+
+    private float GetXPos()
+    {
+        if (this.gameSession.IsAutoPlayEnabled())
+        {
+            return this.ball.transform.position.x;
+        }
+        else
+        {
+            return Input.mousePosition.x / Screen.width * this.screenWidthInUnits;
+        }
     }
 }
