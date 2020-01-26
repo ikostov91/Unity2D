@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,7 +10,10 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
     [SerializeField] GameObject laserPrefab;
-    [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] float projectileSpeed;
+    [SerializeField] float projectiveFiringPeriod;
+
+    Coroutine firingCoroutine;
 
     float xMin;
     float xMax;
@@ -19,7 +23,14 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.SetProjectileSpeed();
         this.SetUpMoveBoundaries();
+    }
+
+    private void SetProjectileSpeed()
+    {
+        this.projectileSpeed = 20f;
+        this.projectiveFiringPeriod = 0.1f;
     }
 
     // Update is called once per frame
@@ -33,11 +44,27 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            this.firingCoroutine = StartCoroutine(this.FireContinously());
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            //StopAllCoroutines();
+            StopCoroutine(this.firingCoroutine);
+        }
+    }
+
+    // Coroutine
+    private IEnumerator FireContinously()
+    {
+        while (true)
+        {
             GameObject laser = Instantiate(
-                this.laserPrefab, 
-                this.gameObject.transform.position, 
-                Quaternion.identity) as GameObject;
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, this.projectileSpeed);
+                            this.laserPrefab,
+                            this.gameObject.transform.position,
+                            Quaternion.identity) as GameObject;
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, this.projectileSpeed);
+            yield return new WaitForSeconds(this.projectiveFiringPeriod);
         }
     }
 
