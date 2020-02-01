@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116ab134d45adc54284c5569bc021524, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5079561097259247682, guid: d581754b34a053e41a70f7d7bc9fbaac,
+  _enemyPrefab: {fileID: 5079561097259247682, guid: d581754b34a053e41a70f7d7bc9fbaac,
     type: 3}
-  pathPrefab: {fileID: 7501706499947363308, guid: 6c98dd5ac44cb864ea1b94142ca624dd,
+  _pathPrefab: {fileID: 4511322329937774857, guid: 6c98dd5ac44cb864ea1b94142ca624dd,
     type: 3}
-  timeBetweenSpanws: 0.5
-  spawnRandomFactor: 0.3
-  numberOfEnemies: 5
-  moveSpeed: 2
+  _timeBetweenSpanws: 0.5
+  _spawnRandomFactor: 0.3
+  _numberOfEnemies: 5
+  _moveSpeed: 4

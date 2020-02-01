@@ -5,14 +5,26 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] List<WaveConfig> waveConfigs;
-    int startingWave = 0;
+    [SerializeField] List<WaveConfig> _waveConfigs;
+    [SerializeField] int _startingWave = 0;
+    [SerializeField] bool _looping = true;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        WaveConfig currentWave = this.waveConfigs[startingWave];
-        StartCoroutine(this.SpawnAllEnemiesInWave(currentWave));
+        do
+        {
+            yield return this.StartCoroutine(this.SpawnAllWaves());
+        } while (this._looping);
+    }
+
+    private IEnumerator SpawnAllWaves()
+    {
+        for (int waveIndex = this._startingWave; waveIndex < this._waveConfigs.Count; waveIndex++)
+        {
+            WaveConfig currentWave = this._waveConfigs[waveIndex];
+            yield return this.SpawnAllEnemiesInWave(currentWave);
+        }
     }
 
     private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveConfig)
@@ -22,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject newEnemy = Instantiate(
                 waveConfig.GetEnemyPrefab(),
-                waveConfig.GetWaypoints()[0].position,
+                waveConfig.GetWaypoints()[0].transform.position,
                 Quaternion.identity);
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
 

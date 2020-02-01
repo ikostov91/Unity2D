@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] WaveConfig waveConfig;
-    List<Transform> wayPoints;
-    [SerializeField] float moveSpeed = 2f;
-    int wayPointIndex = 0;
+    WaveConfig _waveConfig;
+    List<Transform> _wayPoints;
+    int _wayPointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +14,8 @@ public class EnemyPathing : MonoBehaviour
         // EnemyPathing is added to enemy therefore
         // transform.position is connected to the current object
         // this script is added to => Enemy
-        this.wayPoints = this.waveConfig.GetWaypoints();
-        transform.position = this.wayPoints[this.wayPointIndex].position;
+        this._wayPoints = this._waveConfig.GetWaypoints();
+        transform.position = this._wayPoints[this._wayPointIndex].position;
     }
 
     // Update is called once per frame
@@ -27,15 +26,15 @@ public class EnemyPathing : MonoBehaviour
 
     public void SetWaveConfig(WaveConfig waveConfig)
     {
-        this.waveConfig = waveConfig;
+        this._waveConfig = waveConfig;
     }
 
     private void Move()
     {
-        if (wayPointIndex <= this.wayPoints.Count - 1)
+        if (_wayPointIndex <= this._wayPoints.Count - 1)
         {
-            var targetPosition = this.wayPoints[this.wayPointIndex].position;
-            var movementThisFrame = this.moveSpeed * Time.deltaTime;
+            var targetPosition = this._wayPoints[this._wayPointIndex].position;
+            var movementThisFrame = this._waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(
                 this.gameObject.transform.position,
                 targetPosition,
@@ -43,7 +42,7 @@ public class EnemyPathing : MonoBehaviour
 
             if (this.gameObject.transform.position == targetPosition)
             {
-                this.wayPointIndex++;
+                this._wayPointIndex++;
             }
         }
         else
