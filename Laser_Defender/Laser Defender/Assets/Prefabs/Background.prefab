@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1452530316816250904}
   - component: {fileID: 1452530316816251367}
   - component: {fileID: 1452530316816251366}
+  - component: {fileID: 1702341373}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452530316816251364}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.224, y: 0.761, z: 0}
   m_LocalScale: {x: 11.792781, y: 35.650433, z: 1}
   m_Children: []
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1702341373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452530316816251364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210a15cb302c41c4db39332d82d1c7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _backgroundScrollSpeed: 0.05

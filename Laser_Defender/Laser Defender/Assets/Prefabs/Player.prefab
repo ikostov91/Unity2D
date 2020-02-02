@@ -102,6 +102,13 @@ MonoBehaviour:
     type: 3}
   _projectileSpeed: 0
   _projectiveFiringPeriod: 0
+  _destroyVFXPrefab: {fileID: 3024713631573232378, guid: 52811f6728517c6478a23c1dec1c3589,
+    type: 3}
+  _durationOfExplosion: 1
+  _deathSFX: {fileID: 8300000, guid: d8121cf9d577d23469ebd883de6be88c, type: 3}
+  _deathSoundVolume: 0.7
+  _shootSound: {fileID: 8300000, guid: 14d09a2db9d73bf44800d1af3c10d128, type: 3}
+  _shootSoundVolume: 0.25
 --- !u!60 &239519099
 PolygonCollider2D:
   m_ObjectHideFlags: 0

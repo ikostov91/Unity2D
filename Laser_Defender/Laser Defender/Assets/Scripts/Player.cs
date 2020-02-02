@@ -17,6 +17,14 @@ public class Player : MonoBehaviour
     [SerializeField] float _projectileSpeed;
     [SerializeField] float _projectiveFiringPeriod;
 
+    [Header("Visual and Sound Effects")]
+    [SerializeField] GameObject _destroyVFXPrefab;
+    [SerializeField] float _durationOfExplosion = 1f;
+    [SerializeField] AudioClip _deathSFX;
+    [SerializeField] [Range(0, 1)] float _deathSoundVolume = 0.7f;
+    [SerializeField] AudioClip _shootSound;
+    [SerializeField] [Range(0, 1)] float _shootSoundVolume = 0.25f;
+
     Coroutine firingCoroutine;
 
     float xMin;
@@ -68,6 +76,10 @@ public class Player : MonoBehaviour
                             this.gameObject.transform.position,
                             Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, this._projectileSpeed);
+            AudioSource.PlayClipAtPoint(
+                this._shootSound, 
+                Camera.main.transform.position, 
+                this._shootSoundVolume);
             yield return new WaitForSeconds(this._projectiveFiringPeriod);
         }
     }
@@ -109,7 +121,31 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (this._health <= 0)
         {
-            Destroy(this.gameObject);
+            this.Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(this.gameObject);
+        this.TriggerDestroyVFX();
+        this.TriggerSoundEffect();
+    }
+
+    private void TriggerDestroyVFX()
+    {
+        GameObject explosion = Instantiate(
+                            this._destroyVFXPrefab,
+                            this.gameObject.transform.position,
+                            this.gameObject.transform.rotation) as GameObject;
+        Destroy(explosion, this._durationOfExplosion);
+    }
+
+    private void TriggerSoundEffect()
+    {
+        AudioSource.PlayClipAtPoint(
+            this._deathSFX,
+            Camera.main.transform.position,
+            this._deathSoundVolume);
     }
 }

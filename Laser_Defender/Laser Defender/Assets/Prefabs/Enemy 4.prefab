@@ -115,6 +115,13 @@ MonoBehaviour:
   _projectileSpeed: 5
   _laserPrefab: {fileID: 468880545195174455, guid: fbb09c0a9319a6e4ba2666cbd60e7b04,
     type: 3}
+  _destroyVFXPrefab: {fileID: 3024713631573232378, guid: 52811f6728517c6478a23c1dec1c3589,
+    type: 3}
+  _durationOfExplosion: 1
+  _deathSFX: {fileID: 8300000, guid: d8121cf9d577d23469ebd883de6be88c, type: 3}
+  _deathSoundVolume: 0.5
+  _shootSound: {fileID: 8300000, guid: 7c82a8e942acf864e9eebfdbe4f5a2b6, type: 3}
+  _shootSoundVolume: 0.5
 --- !u!60 &762692386
 PolygonCollider2D:
   m_ObjectHideFlags: 0
