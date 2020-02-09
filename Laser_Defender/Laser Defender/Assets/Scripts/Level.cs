@@ -5,27 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] float delayInSeconds = 2f;
+
     public void LoadStartMenu()
     {
-        Debug.Log("Load start menu");
         SceneManager.LoadScene("Start Menu");
     }
 
     public void LoadGame()
     {
-        Debug.Log("Load Game");
+        FindObjectOfType<GameSession>().ResetGame();
         SceneManager.LoadScene("Game");
     }
 
     public void LoadGameOver()
     {
-        Debug.Log("Load Game Over");
+        this.StartCoroutine(this.WaitAndLoad());
+    }
+
+    private IEnumerator WaitAndLoad()
+    {
+        yield return new WaitForSeconds(this.delayInSeconds);
         SceneManager.LoadScene("Game Over");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit Game");
         Application.Quit();
     }
 }

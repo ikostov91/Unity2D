@@ -130,6 +130,7 @@ public class Player : MonoBehaviour
         Destroy(this.gameObject);
         this.TriggerDestroyVFX();
         this.TriggerSoundEffect();
+        FindObjectOfType<Level>().LoadGameOver();
     }
 
     private void TriggerDestroyVFX()
