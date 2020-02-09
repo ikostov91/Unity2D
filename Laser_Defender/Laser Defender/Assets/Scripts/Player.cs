@@ -149,4 +149,9 @@ public class Player : MonoBehaviour
             Camera.main.transform.position,
             this._deathSoundVolume);
     }
+
+    public int GetHealth()
+    {
+        return this._health;
+    }
 }

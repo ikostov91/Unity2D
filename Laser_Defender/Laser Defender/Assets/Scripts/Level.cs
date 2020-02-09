@@ -14,7 +14,11 @@ public class Level : MonoBehaviour
 
     public void LoadGame()
     {
-        FindObjectOfType<GameSession>().ResetGame();
+        var gameSession = FindObjectOfType<GameSession>();
+        if (gameSession != null)
+        {
+            gameSession.ResetGame();
+        }
         SceneManager.LoadScene("Game");
     }
 
