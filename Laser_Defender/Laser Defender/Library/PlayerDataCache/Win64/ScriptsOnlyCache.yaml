@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - Player
     - ScoreDisplay
     - Shredder
+    - Spinner
     - WaveConfig
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -81,19 +82,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12068}
     - Class: 114
-      Script: {instanceID: 12240}
+      Script: {instanceID: 12242}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12688}
+      Script: {instanceID: 12690}
     - Class: 114
-      Script: {instanceID: 12710}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 12778}
+      Script: {instanceID: 12780}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -166,19 +167,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12130}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12190}
     - Class: 114
-      Script: {instanceID: 12620}
+      Script: {instanceID: 12318}
     - Class: 114
-      Script: {instanceID: 12688}
+      Script: {instanceID: 12622}
     - Class: 114
-      Script: {instanceID: 12778}
+      Script: {instanceID: 12690}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12780}
     - Class: 114
-      Script: {instanceID: 12946}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 16280}
+      Script: {instanceID: 12948}
+    - Class: 114
+      Script: {instanceID: 18228}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -243,23 +246,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12020}
     - Class: 114
-      Script: {instanceID: 12240}
+      Script: {instanceID: 12242}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12494}
+      Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12688}
+      Script: {instanceID: 12690}
     - Class: 114
-      Script: {instanceID: 12710}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 12778}
+      Script: {instanceID: 12780}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 13082}
+      Script: {instanceID: 13084}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -587,6 +590,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthDisplay
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -833,7 +842,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: b1ff5bb7ed4b6b7b021e39706e2fa981
+      Hash: 9a42215e03b70a914d79d620f03700cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -971,10 +980,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d37904bbcacc5e23e6f0ce26c56bd123
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HealthDisplay
+    className: Spinner
   platform: 19
   scenePathNames:
   - Assets/Scenes/Start Menu.unity

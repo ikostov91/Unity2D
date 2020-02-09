@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy Stats")]
     [SerializeField] float _health = 100f;
-    [SerializeField] int scoreValue = 150;
+    [SerializeField] int _scoreValue = 150;
 
     [Header("Shooting")]
     float _shotCounter;
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        FindObjectOfType<GameSession>().AddToScore(this.scoreValue);
+        FindObjectOfType<GameSession>().AddToScore(this._scoreValue);
         Destroy(this.gameObject);
         this.TriggerDestroyVFX();
         this.TriggerSoundEffect();

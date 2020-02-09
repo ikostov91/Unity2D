@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] float delayInSeconds = 2f;
+    [SerializeField] float _delayInSeconds = 2f;
 
     public void LoadStartMenu()
     {
@@ -29,7 +29,7 @@ public class Level : MonoBehaviour
 
     private IEnumerator WaitAndLoad()
     {
-        yield return new WaitForSeconds(this.delayInSeconds);
+        yield return new WaitForSeconds(this._delayInSeconds);
         SceneManager.LoadScene("Game Over");
     }
 

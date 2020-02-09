@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4962881776281970649}
   - component: {fileID: 4330949232822925523}
   - component: {fileID: 859489660560910945}
+  - component: {fileID: -1484546244072104147}
   m_Layer: 11
   m_Name: Enemy Bomb
   m_TagString: Untagged
@@ -70,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 636857251
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e5e815c73df321747af18dc31c9af98e, type: 3}
   m_Color: {r: 1, g: 0.28276932, b: 0, a: 1}
@@ -143,7 +144,41 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.185, y: 0.17999999}
-      - {x: -0.185, y: -0.17999999}
-      - {x: 0.185, y: -0.17999999}
-      - {x: 0.185, y: 0.17999999}
+    - - {x: 0.15568256, y: 0.18296695}
+      - {x: 0.087833166, y: 0.18172121}
+      - {x: 0.03535533, y: 0.123607635}
+      - {x: -0.030136108, y: 0.12252784}
+      - {x: -0.07569504, y: 0.18107128}
+      - {x: -0.13976383, y: 0.18080258}
+      - {x: -0.17080402, y: 0.15632725}
+      - {x: -0.1829009, y: 0.093317986}
+      - {x: -0.11444092, y: 0.03209448}
+      - {x: -0.11829281, y: -0.037109375}
+      - {x: -0.1789751, y: -0.08726597}
+      - {x: -0.16937876, y: -0.16176534}
+      - {x: -0.14156199, y: -0.1831696}
+      - {x: -0.0774827, y: -0.18141055}
+      - {x: -0.02773571, y: -0.12776661}
+      - {x: 0.038748503, y: -0.12226963}
+      - {x: 0.08857393, y: -0.17978144}
+      - {x: 0.15289927, y: -0.17933655}
+      - {x: 0.18245268, y: -0.14814138}
+      - {x: 0.18638062, y: -0.08658171}
+      - {x: 0.1260066, y: -0.031159878}
+      - {x: 0.13138318, y: 0.034882545}
+      - {x: 0.18447399, y: 0.07810807}
+      - {x: 0.18664455, y: 0.13822126}
+      - {x: 0.16971612, y: 0.16088486}
+--- !u!114 &-1484546244072104147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468880545195174455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852f9b44c5115d43aafd13d302897a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpin: 360
