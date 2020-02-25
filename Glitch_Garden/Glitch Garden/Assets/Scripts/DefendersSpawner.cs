@@ -8,6 +8,11 @@ public class DefendersSpawner : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (this._defender is null)
+        {
+            return;
+        }
+
         var position = this.GetSquareClicked();
         this.SpawnDefender(position);
     }

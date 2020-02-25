@@ -459,7 +459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916694183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4427, y: 0.033, z: 44.86721}
+  m_LocalPosition: {x: -0.22, y: 0.033, z: 44.86721}
   m_LocalScale: {x: 0.080564454, y: 0.8056445, z: 0.72508}
   m_Children: []
   m_Father: {fileID: 1291500783}
@@ -813,7 +813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456188867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3337, y: 0.015, z: 1.9672089}
+  m_LocalPosition: {x: -0.111, y: 0.015, z: 1.9672089}
   m_LocalScale: {x: 0.113844454, y: 1.1384445, z: 1.0246}
   m_Children: []
   m_Father: {fileID: 1291500783}
@@ -963,6 +963,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 749310578}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2116997201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2116997201, guid: 5350291ac571ccd4dbd94d54ab272af9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2276825146477192451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116997205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116997201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9620068bedb8276488ab4732577c89c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stars: 100
 --- !u!1001 &1203014252238717171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,6 +1058,69 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2116997201, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_Name
+      value: Star Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997202, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -470.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997202, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -557.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997202, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 136.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997202, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 313.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_Text
+      value: '999
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8151735
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116997203, guid: 5350291ac571ccd4dbd94d54ab272af9, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bfda7faa199933b41ad4a7b9713a71cf,
+        type: 3}
     - target: {fileID: 2276825146085518750, guid: 5350291ac571ccd4dbd94d54ab272af9,
         type: 3}
       propertyPath: m_Name
