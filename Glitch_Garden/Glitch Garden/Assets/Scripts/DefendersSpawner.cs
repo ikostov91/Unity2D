@@ -1,0 +1,42 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DefendersSpawner : MonoBehaviour
+{
+    Defender _defender;
+
+    private void OnMouseDown()
+    {
+        var position = this.GetSquareClicked();
+        this.SpawnDefender(position);
+    }
+
+    public void SetSelectedDefender(Defender defenderToSelect)
+    {
+        this._defender = defenderToSelect;
+    }
+
+    private Vector2 GetSquareClicked()
+    {
+        Vector2 clickPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(clickPosition);
+        Vector2 gridPosition = this.SnapToGrid(worldPosition);
+        return gridPosition;
+    }
+
+    private Vector2 SnapToGrid(Vector2 rawWorldPosition)
+    {
+        float newX = Mathf.RoundToInt(rawWorldPosition.x);
+        float newY = Mathf.RoundToInt(rawWorldPosition.y);
+
+        return new Vector2(newX, newY);
+    }
+
+    private void SpawnDefender(Vector2 position)
+    {
+        Defender newDefender = Instantiate(this._defender,
+            position,
+            Quaternion.identity) as Defender;
+    }
+}

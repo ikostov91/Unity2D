@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 4151534273994758210}
   - component: {fileID: 4151534273994758211}
   - component: {fileID: 4151534273994758220}
+  - component: {fileID: 6704442432774549400}
+  - component: {fileID: 543949965}
+  - component: {fileID: 3783300680042472232}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -115,4 +118,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7fd6303b9a6c8849a2d4ca289fbd623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 1
+--- !u!60 &6704442432774549400
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151534273994758208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.51, y: 1.86}
+    newSize: {x: 0.81, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.074999996, y: -0.59}
+      - {x: -0.074999996, y: -0.52}
+      - {x: -0.09171486, y: -0.49643075}
+      - {x: -0.2348547, y: -0.49328613}
+      - {x: -0.31828547, y: -0.3221538}
+      - {x: -0.3544569, y: -0.24870288}
+      - {x: -0.40127945, y: -0.1864307}
+      - {x: -0.4248147, y: -0.0040278435}
+      - {x: -0.43157005, y: 0.08356929}
+      - {x: -0.49156952, y: 0.17999995}
+      - {x: -0.6763072, y: 0.17342758}
+      - {x: -0.7709465, y: 0.03933525}
+      - {x: -0.885, y: -0.04}
+      - {x: -0.905, y: -0.11}
+      - {x: -0.8984299, y: -0.16685534}
+      - {x: -0.835, y: -0.22999999}
+      - {x: -0.78499997, y: -0.24}
+      - {x: -0.805, y: -0.26}
+      - {x: -0.8124409, y: -0.33727992}
+      - {x: -0.745, y: -0.42999998}
+      - {x: -0.72754717, y: -0.51043236}
+      - {x: -0.7885752, y: -0.58014154}
+      - {x: -0.77514505, y: -0.64014155}
+      - {x: -0.71843004, y: -0.6734277}
+      - {x: -0.42127943, y: -0.6701415}
+      - {x: -0.325, y: -0.63}
+      - {x: -0.105, y: -0.63}
+--- !u!50 &543949965
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151534273994758208}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3783300680042472232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151534273994758208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc3cff1edc4d5347a7a5a705dbfc8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 30
+  _deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
