@@ -24,7 +24,10 @@ public class AttackerSpawner : MonoBehaviour
 
     private void SpawnAttacker()
     {
-        Instantiate(this._attackerPrefab, this.transform.position, this.transform.rotation);
+        Attacker newAttacker = Instantiate(this._attackerPrefab, 
+            this.transform.position, 
+            this.transform.rotation) as Attacker;
+        newAttacker.transform.parent = this.transform;
     }
 
     // Update is called once per frame

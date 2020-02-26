@@ -19,6 +19,11 @@ public class StarDisplay : MonoBehaviour
         this._starText.text = this._stars.ToString();
     }
 
+    public bool HaveEnoughStars(int amount)
+    {
+        return this._stars >= amount;
+    }
+
     public void AddStars(int amount)
     {
         this._stars += amount;

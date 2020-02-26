@@ -14,12 +14,24 @@ public class DefendersSpawner : MonoBehaviour
         }
 
         var position = this.GetSquareClicked();
-        this.SpawnDefender(position);
+        this.AttemptToPlaceDefenderAt(position);
     }
 
     public void SetSelectedDefender(Defender defenderToSelect)
     {
         this._defender = defenderToSelect;
+    }
+
+    private void AttemptToPlaceDefenderAt(Vector2 gridPosition)
+    {
+        var starDisplay = FindObjectOfType<StarDisplay>();
+        int defenderCost = this._defender.GetStarCost();
+
+        if (starDisplay.HaveEnoughStars(defenderCost))
+        {
+            this.SpawnDefender(gridPosition);
+            starDisplay.SpendStars(defenderCost);
+        }
     }
 
     private Vector2 GetSquareClicked()
