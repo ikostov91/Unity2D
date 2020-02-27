@@ -371,4 +371,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbaaa2957b0328439c48efd4a47f9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defenderPrefab: {fileID: 0}
+  _defenderPrefab: {fileID: 9098482185757201423, guid: 44aa578a9d5aae44ca5200e761658192,
+    type: 3}
