@@ -14,6 +14,7 @@ public class DefendersSpawner : MonoBehaviour
         }
 
         var position = this.GetSquareClicked();
+        Debug.Log(position);
         this.AttemptToPlaceDefenderAt(position);
     }
 

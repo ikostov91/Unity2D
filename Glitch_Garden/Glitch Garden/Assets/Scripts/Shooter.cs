@@ -6,23 +6,23 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] GameObject _projectile, _gun;
     AttackerSpawner _myLaneSpawner;
+    Animator _animator;
 
     private void Start()
     {
         this.SetLaneSpawner();
+        this.SetAnimator();
     }
 
     private void Update()
     {
         if (this.IsAttackerInLane())
         {
-            Debug.Log("shoot");
-            // TODO change animation state to shooting
+            this._animator.SetBool("IsAttacking", true);
         }
         else
         {
-            Debug.Log("sit and wait");
-            // TODO change animation state to idle
+            this._animator.SetBool("IsAttacking", false);
         }
     }
 
@@ -37,9 +37,13 @@ public class Shooter : MonoBehaviour
             if (isCloseEnough)
             {
                 this._myLaneSpawner = spawner;
-                // return;
             }
         }
+    }
+
+    private void SetAnimator()
+    {
+        this._animator = GetComponent<Animator>();
     }
 
     private bool IsAttackerInLane()
