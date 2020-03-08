@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class LivesDisplay : MonoBehaviour
 {
-    [SerializeField] int _lives = 10;
+    [SerializeField] int _lives = 1;
     Text _livesText;
     LevelLoader _levelLoader;
-    [SerializeField] float _gameOverDelay = 3f;
     [SerializeField] int _damage = 1;
 
     // Start is called before the first frame update
@@ -36,13 +35,7 @@ public class LivesDisplay : MonoBehaviour
 
         if (this._lives <= 0)
         {
-            this.StartCoroutine(this.EndGame());
+            FindObjectOfType<LevelController>().HandleLoseCondition();
         }
-    }
-
-    private IEnumerator EndGame()
-    {
-        yield return new WaitForSeconds(this._gameOverDelay);
-        this._levelLoader.GameOver();
     }
 }

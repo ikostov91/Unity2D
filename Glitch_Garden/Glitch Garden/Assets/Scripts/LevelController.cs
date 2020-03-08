@@ -8,6 +8,16 @@ public class LevelController : MonoBehaviour
 {
     int _numberOfAttackers = 0;
     bool _levelTimerFinished = false;
+    [SerializeField] float _waitToLoad = 4f;
+    [SerializeField] float _gameOverDelay = 3f;
+    [SerializeField] GameObject _winLabel;
+    [SerializeField] GameObject _loseLabel;
+
+    private void Start()
+    {
+        this._winLabel.SetActive(false);
+        this._loseLabel.SetActive(false);
+    }
 
     public void AttackerSpawned()
     {
@@ -20,8 +30,31 @@ public class LevelController : MonoBehaviour
 
         if (this._numberOfAttackers == 0 && this._levelTimerFinished)
         {
-            Debug.Log("end level now");
+            this.StartCoroutine(this.HandleWinCondition());
         }
+    }
+
+    private IEnumerator HandleWinCondition()
+    {
+        this._winLabel.SetActive(true);
+        this.GetComponent<AudioSource>().Play();
+
+        yield return new WaitForSeconds(this._waitToLoad);
+
+        FindObjectOfType<LevelLoader>().LoadNextScene();
+    }
+
+    public void HandleLoseCondition()
+    {
+        this._loseLabel.SetActive(true);
+        Time.timeScale = 0;
+        StartCoroutine(this.EndGame());
+    }
+
+    private IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(this._gameOverDelay);
+        FindObjectOfType<LevelLoader>().GameOver();
     }
 
     public void LevelTimeFinished()

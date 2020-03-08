@@ -22,6 +22,7 @@ public class GameTimer : MonoBehaviour
         bool timerFinished = Time.timeSinceLevelLoad >= this._levelTime;
         if (timerFinished)
         {
+            Debug.Log("Level timer finished");
             FindObjectOfType<LevelController>().LevelTimeFinished();
             this._triggeredLevelFinished = true;
         }

@@ -14,6 +14,7 @@ public class AttackerSpawner : MonoBehaviour
     {
         while (this._spawn)
         {
+            Debug.Log("spawn attacker: " + this._spawn);
             float spawnDelay = Random.Range(this._minSpawnDelay, this._maxSpawnDelay);
             yield return new WaitForSeconds(spawnDelay);
 
