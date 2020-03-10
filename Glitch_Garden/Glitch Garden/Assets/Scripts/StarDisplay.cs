@@ -32,7 +32,7 @@ public class StarDisplay : MonoBehaviour
 
     public void SpendStars(int amount)
     {
-        if (this._stars > amount)
+        if (this._stars >= amount)
         {
             this._stars -= amount;
             this.UpdateDisplay();

@@ -13,10 +13,7 @@ public class PlayerBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        if (otherCollider.gameObject.GetComponent<Attacker>())
-        {
-            this._livesDisplayComponent.TakeLife();
-            Object.Destroy(otherCollider);
-        }
+        this._livesDisplayComponent.TakeLife();
+        Object.Destroy(otherCollider.gameObject);
     }
 }
