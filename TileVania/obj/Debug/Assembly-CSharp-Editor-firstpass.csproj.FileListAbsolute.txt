@@ -1,0 +1,2 @@
+D:\Repositories\Unity2D\TileVania\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+D:\Repositories\Unity2D\TileVania\obj\Debug\Assembly-CSharp-Editor-firstpass.csproj.CoreCompileInputs.cache
