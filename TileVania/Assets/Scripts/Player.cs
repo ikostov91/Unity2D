@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _runSpeed = 5f;
     [SerializeField] private float _jumpSpeed = 50f;
     [SerializeField] private float _climbSpeed = 2f;
+    [SerializeField] private Vector2 _deathKick = new Vector2(25f, 25f);
 
     // State
     private bool _isAlive = true;
@@ -34,10 +36,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!this._isAlive)
+        {
+            return; 
+        }
+
         this.Run();
         this.ClimbLadder();
         this.Jump();
         this.FlipSprite();
+        this.Die();
     }
 
     private void Run()
@@ -98,6 +106,17 @@ public class Player : MonoBehaviour
         {
             // Mathf.Sign returns +1 or -1 depending of the sign of the movement
             this.gameObject.transform.localScale = new Vector2(Mathf.Sign(this._myRigidBody.velocity.x), 1);
+        }
+    }
+
+    private void Die()
+    {
+        int layerMask = LayerMask.GetMask("Enemy");
+        if (this._myBodyCollider2d.IsTouchingLayers(layerMask))
+        {
+            this._isAlive = false;
+            this._myAnimator.SetTrigger("Dying");
+            this._myRigidBody.velocity = this._deathKick;
         }
     }
 }
